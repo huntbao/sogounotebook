@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>麦库记事 Chrome版</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <base target="_self" />
+</head>
+<body>
+<div class="not-login">
+    <div class="inner">
+        <a href="" target="_blank" class="login button">登录</a>
+        <a href="" target="_blank" class="register button">注册</a>
+    </div>
+</div>
+<div class="wrapper">
+	<div class="list-wrap" id="list-wrap">
+        <div class="top">
+            <a href="http://note.sdo.com/my" title="前往我的麦库" class="logo" target="_blank"><img src="images/icons/19x19.png" alt="麦库记事" /></a>
+            <span class="main-menu-button"><span></span></span>
+            <ul class="main-menu">
+                <!-- <li><a href="#options" class="option-page">设置选项</a></li> -->
+                <li><a href="#help" class="help-button">帮助</a></li>
+                <li><a href="http://lab.in.sdo.com/support/index.php" class="feedback" target="_blank">意见反馈</a></li>
+                <li><a href="#logoff" class="logoff">注销</a></li>
+            </ul>
+            <input type="text" class="search" placeholder="搜索笔记" />
+            <div class="create-button">
+                <a href="#create" class="button create" id="create-note" title="新建笔记"><span>新建笔记</span></a>
+                <a href="#clip" class="button clip" id="clip-note" title="保存页面内容"><span>保存页面内容</span></a>
+            </div>
+        </div>
+        <div class="note-list-wrapper">
+            <ul class="note-list"></ul>
+            <div class="search-more">
+                <a href="javascript:void(0);">查找更多笔记</a>
+            </div>
+        </div>
+    </div>
+    <div class="view-wrap" id="view-wrap">
+        <div class="note">
+            <div class="note-top">
+                <div class="view-action">
+                    <div class="clip-list">
+                        <div class="now button"><span class="status">截取网页正文</span><span class="arrow"></span></div>
+                        <ul class="more">
+                            <li class="insert-article"><a href="#insert-article">截取网页正文</a></li>
+                            <li class="insert-page"><a href="#insert-page">截取完整网页</a></li>
+                            <li class="insert-url"><a href="#insert-url" title="在光标处插入当前页面的地址">截取网页地址</a></li>
+                        </ul>
+                    </div>
+                    <a href="#delete" title="插入页面地址" class="button url"><span>插入页面地址</span></a>
+                    <a href="#delete" title="删除" class="button delete"><span>删除</span></a>
+                    <a href="#back-to-list" title="保存并返回" class="button back"><span>保存并返回</span></a>
+                </div>
+                <input tabindex="1" type="text" class="title" placeholder="标题" />
+            </div>
+            <div class="content-wrap">
+                <div class="content-outer">
+                    <div id="content" tabindex="2" class="content" contenteditable="true"></div>
+                    <div class="content-ext"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="status-bar" id="status-bar">
+        <div class="sync">
+            <span class="text">您的笔记会自动<a href="#" class="manual-sync">同步到麦库</a></span>
+            <span class="offline">离线模式</span>
+            <span class="login">
+                <!-- <a href="http://note.sdo.com" target="_blank">登录</a>后同步笔记到麦库 -->
+            </span>
+        </div>
+        <div class="status">
+            <span></span>
+        </div>
+    </div>
+    <div class="help" style="display:none;">
+        <ul class="cards">
+            <li class="card">
+                <h2>欢迎使用麦库记事本 v1.5.1</h2>
+                <p class="intro">麦库记事本是<a href="http://mknote.com">麦库记事</a>为浏览器开发的轻型快速记事、收集资料的工具。</p>
+                <p class="intro">除了基本的笔记浏览、编辑等功能，麦库记事本还提供了几项便捷的功能。</p>
+                <div class="image">
+                    <img src="images/help/intro01.png" />
+                </div>
+            </li>
+            <li class="card hide">
+                <h3>快速收集</h3>
+                <p>保存页面中有“截取正文部份”和“截取完整页面”与” 截取页面地址”三个选项。如果您当前访问的网页有主要内容区块（正文），那么麦库预设将会自动为您截取正文部份并将内容保存为一篇新的笔记；您也可以切换成“截取完整页面”将完整页面保存至麦库。</p>
+                <p>而“截取页面地址”则会将当前页面的地址和页面名称作为一篇新的笔记保存下来。</p>
+                <div class="image">
+                    <img src="images/help/intro02.png" />
+                </div>
+            </li>
+            <li class="card hide">
+                <h3>社交网站资料收集</h3>
+                <p>如果您经常使用新浪微博，腾讯微博等社交网站，那么您还可以在麦库记事本的<a href="options.html" target="_blank">设置界面</a>中激活“保存到麦库”按钮的功能。这样您就可以在这些网站上更快捷地“保存到麦库”了。</p>
+                <p>目前麦库记事本只支持新浪微博、腾讯微博、人人网、豆瓣。其它网站的支持会在之后的更新中逐渐添加。</p>
+                <div class="image">
+                    <img src="images/help/intro03.png" />
+                </div>
+            </li>
+            <li class="card hide">
+                <h3>离线使用</h3>
+                <p>麦库记事本是支持离线使用的，即使您所处的环境无法连接到因特网，您同样可以使用麦库记事本。</p>
+                <p>当您连接到因特网并且再次打开麦库记事本时，笔记将会被同步到麦库，以便在手机、平板电脑等设备上查看。</p>
+                <div class="image">
+                    <img src="images/help/intro04.png" />
+                </div>
+            </li>
+            <li class="card hide">
+                <h3>右键菜单</h3>
+                <p>当您选中页面中某段文字后，右键菜单中会出现“保存到麦库”选项，它会将您选中的内容保存到麦库记事本。</p>
+                <div class="image">
+                    <img src="images/help/intro05.png" />
+                </div>
+            </li>
+            <li class="card hide">
+                <h3>麦库网页工具栏</h3>
+                <p>在您浏览某些新闻、博客等页面时，您会发现麦库网页工具栏出现在页面上。</p>
+                <p>目前工具栏上只有保存当前文章的“保存到麦库”按钮，之后会添加更多方便的功能。</p>
+                <div class="image">
+                    <img src="images/help/intro06.png" />
+                </div>
+            </li>
+        </ul>
+        <div class="nav">
+            <ul class="page"></ul>
+            <span class="prev arrow"></span>
+            <span class="next arrow"></span>
+            <span class="go"></span>
+        </div>
+    </div>
+</div>
+<div id="cover"></div>
+</body>
+
+<div style="display:none;" id="content-width-calculater">
+</div>
+
+<div style="display:none;" id="note-item-template">
+    <h3><%= title %></h3>
+    <span><%= updatetime %></span>
+    <p><%= summary %></p>
+</div>
+
+<script type="text/javascript" src="script/lib/json2.js"></script>
+<script type="text/javascript" src="script/lib/jquery.min.js"></script>
+<script type="text/javascript" src="script/lib/underscore-min.js"></script>
+<script type="text/javascript" src="script/lib/backbone.js"></script>
+
+<script type="text/javascript" src="script/locale.js"></script>
+<script type="text/javascript" src="script/storage.js"></script>
+<script type="text/javascript" src="script/backbone-sync.js"></script>
+<script type="text/javascript" src="script/mknote.js"></script>
+
+</html>

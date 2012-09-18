@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension>
+    <id>com.sogou.mknote</id>
+    <name>麦库记事本</name>
+    <show_icon>true</show_icon>
+    <description>打开麦库记事</description> 
+    <version>1.5</version>
+    <popup page="popup.html" width="450" height="582" />
+    <background page="background.html"></background>
+    <option page="options.html" width="900" height="490"></option>
+    <request_api_version>1</request_api_version>
+    <author>mknote</author>
+    <content_scripts>
+        <content_script runat="document_complete" core_type="webkit">
+            <match>*://*/*</match>
+            <js>script/lib/jquery.min.js</js>
+            <js>script/lib/hatena-extract-content/extract-content-all.js</js>
+            <js>script/global.js</js>
+            <js>script/locale.js</js>
+            <css>css/global.css</css>
+        </content_script>
+        <content_script runat="document_complete" core_type="webkit">
+            <match>*://t.sina.com.cn/*</match>
+            <match>*://weibo.com/*</match>
+            <match>*://*.weibo.com/*</match>
+            <js>script/sites/sina.js</js>
+        </content_script>
+        <content_script runat="document_complete" core_type="webkit">
+            <match>*://*.renren.com/*</match>
+            <js>script/sites/renren.js</js>
+        </content_script>
+        <content_script runat="document_complete" core_type="webkit">
+            <match>*://t.qq.com/*</match>
+            <js>script/sites/qq.js</js>
+        </content_script>
+        <content_script runat="document_complete" core_type="webkit">
+            <match>*://*.douban.com/*</match>
+            <js>script/sites/douban.js</js>
+        </content_script>
+    </content_scripts>
+</extension>

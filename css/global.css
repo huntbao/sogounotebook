@@ -1,0 +1,55 @@
+#maiku-save-success{
+    background-color:rgba(0,0,0,0.75);
+    background-repeat:no-repeat;
+    background-position:center 40px;
+    background-image:url(chrome-extension://__MSG_@@extension_id__/images/saved.png);
+    border-radius:10px;
+    color:#FFF;
+    display:none;
+    height:136px;
+    margin:-68px 0 0 -62px;
+    left:50%;
+    position:fixed;
+    top:50%;
+    width:124px;
+    z-index:99999999999;
+}
+#maiku-save-success .logo{
+    background-color:rgba(0,0,0,0.25);
+    background-repeat:no-repeat;
+    background-position:5px 4px;
+    background-image:url(chrome-extension://__MSG_@@extension_id__/images/icons/16x16.png);
+    border-radius:10px 10px 0 0;
+    line-height:2;
+    height:24px;
+    font:12px simsun, arial, sans-serif;
+    padding:0 0 0 25px;
+}
+#maiku-save-success .text{
+    font:24px "Microsoft YaHei", simhei, Hiragino, arial, sans-serif;
+    margin:70px 0 0 0;
+    text-align:center;
+}
+#maiku-toolbar{
+    background-color:#FFF;
+    border:solid 1px #C6D59A;
+    display:none;
+    height:22px;
+    padding:0 0 0 25px;
+    position:absolute;
+    width:50px;
+    z-index:9999999999;
+}
+#maiku-toolbar a{
+    display:inline-block;
+    height:14px;
+    margin:4px 5px;
+    width:14px;
+    text-indent:-9999px;
+    padding:0;
+}
+#maiku-toolbar,
+#maiku-toolbar .maiku-toolbar-save,
+#maiku-toolbar .maiku-toolbar-close{
+    background-repeat:no-repeat;
+}
